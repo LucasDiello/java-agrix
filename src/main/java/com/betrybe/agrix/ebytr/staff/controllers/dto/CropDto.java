@@ -12,13 +12,8 @@ import java.time.LocalDate;
 @JsonPropertyOrder({"id", "name", "plantedArea", "plantedDate", "harvestDate", "farmId"})
 public record CropDto(Long id, String name, Double plantedArea,
                       LocalDate plantedDate, LocalDate harvestDate, Long farmId) {
-
   public Crop toCrop() {
     return new Crop(id, name, plantedArea, plantedDate, harvestDate);
   }
 
-  public CropDto(Long id, String name, Double plantedArea, LocalDate plantedDate,
-      LocalDate harvestDate) {
-    this(id, name, plantedArea, plantedDate, harvestDate, null);
-  }
 }

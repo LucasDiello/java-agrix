@@ -3,6 +3,7 @@ package com.betrybe.agrix.ebytr.staff.service;
 import com.betrybe.agrix.ebytr.staff.exception.PersonNotFoundException;
 import com.betrybe.agrix.ebytr.staff.models.entity.Person;
 import com.betrybe.agrix.ebytr.staff.models.repository.PersonRepository;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,10 @@ public class PersonService {
   public PersonService(
       PersonRepository personRepository) {
     this.personRepository = personRepository;
+  }
+
+  public List<Person> getAllPersons() {
+    return personRepository.findAll();
   }
 
   /**

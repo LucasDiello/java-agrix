@@ -13,7 +13,7 @@ import java.util.Objects;
  * Class representing a person.
  */
 @Entity
-public class Person {
+public class Person  {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +27,22 @@ public class Person {
   private Role role;
 
   public Person() {
+  }
+
+  /**
+   * Construtor da classe Person.
+   *
+   * @param id       O ID da pessoa.
+   * @param username O nome de usuário da pessoa.
+   * @param password A senha da pessoa.
+   * @param role     O papel (role) da pessoa.
+   */
+
+  public Person(Long id, String username, String password, Role role) {
+    this.id = id;
+    this.username = username;
+    this.password = password;
+    this.role = role;
   }
 
   public Long getId() {
